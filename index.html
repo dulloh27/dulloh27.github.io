@@ -734,14 +734,22 @@ pdf2htmlEX.Viewer=Viewer;})();
 </script>
 <script>
 var userAccessCode = prompt("Enter Access Code:");
-        var correctAccessCode = 'PMB22PRIMA';
+var correctAccessCode = 'PMB22PRIMA';
 
-        if (userAccessCode === correctAccessCode) {
-            document.write("<h1>Kunci Jawaban Bilangan Prima </h1>");
-        } else {
-            alert("Access Denied");
-            window.location.href = 'https://github.com/dulloh27';
+if (userAccessCode === null) {
+    window.location.href = "https://www.google.com"; // Arahkan ke Google.com
+} else if (userAccessCode === correctAccessCode) {
+    document.write("<h1>Kunci Jawaban Bilangan Prima </h1>");
+} else {
+    while (userAccessCode !== correctAccessCode) {
+        alert("Access Denied");
+        userAccessCode = prompt("Enter Access Code Again:");
+        if (userAccessCode === null) {
+            window.location.href = "https://www.google.com"; // Arahkan ke Google.com
+            break;
         }
+    }
+ }
 try{
 pdf2htmlEX.defaultViewer = new pdf2htmlEX.Viewer({});
 }catch(e){}
